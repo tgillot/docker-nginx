@@ -1,13 +1,12 @@
 # Dockerfile Nginx
 
-# Pull base Ubuntu image
-FROM dockerfile/ubuntu
+# Pull official Nginx image
+FROM nginx 
 
-# Install Nginx
-RUN  sudo apt-get install nginx apache2-utils 
-
+# Replace default conf files
 COPY default /etc/nginx/sites-available/default
+COPY default.conf /etc/nginx/conf.d/default.conf
+COPY htpasswd.users /etc/nginx
 
+# Port Nginx listens on
 EXPOSE 591
-
-
