@@ -3,7 +3,11 @@ upstream kibana_hosts {
 
     server 172.18.0.3:5601
 
+<<<<<<< HEAD
 }
+=======
+    server_name localhost;
+>>>>>>> 5953783044f4de2a79826304c5406b867178de49
 
 server {
   listen    591;
